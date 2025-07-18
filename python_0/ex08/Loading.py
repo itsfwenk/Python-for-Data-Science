@@ -1,6 +1,7 @@
 import time
 import shutil
 
+
 def format_time(seconds):
     """
     Format seconds into MM:SS
@@ -13,6 +14,7 @@ def format_time(seconds):
     """
     minutes, seconds = divmod(int(seconds), 60)
     return f"{minutes:02d}:{seconds:02d}"
+
 
 def ft_tqdm(lst: range) -> None:
     """
@@ -46,6 +48,7 @@ def ft_tqdm(lst: range) -> None:
 
         print(f"\r{progress_info} {time_info}", end="", flush=True)
         yield item
+
 
 def main():
     for _ in ft_tqdm(range(0, 333)):
