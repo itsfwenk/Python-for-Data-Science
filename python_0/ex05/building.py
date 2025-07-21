@@ -13,7 +13,7 @@ def main():
     Returns:
         None
     """
-    strToCount=""
+    strToCount = ""
     try:
         if len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")
