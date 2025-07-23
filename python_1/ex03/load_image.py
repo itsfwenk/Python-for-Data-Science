@@ -57,12 +57,12 @@ def ft_load(path: str) -> np.array:
 
     except FileNotFoundError as e:
         print(str(e))
-        return np.array([])
+        sys.exit(1)
 
     except ValueError as e:
         print(str(e))
-        return np.array([])
+        sys.exit(1)
 
     except Exception as e:
         print(f"Error loading image: {str(e)}")
-        return np.array([])
+        sys.exit(1)

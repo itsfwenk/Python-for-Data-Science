@@ -23,7 +23,7 @@ def slice_me(family: list, start: int, end: int) -> list:
             raise AssertionError("start and end must be integers.")
         if not all(len(item) == len(family[0]) for item in family):
             raise AssertionError("lists must all be the same size.")
-        
+
         print(f"My shape is : {np.array(family).shape}")
         print(f"My new shape is : {np.array(family)[start:end].shape}")
         return np.array(family)[start:end].tolist()
