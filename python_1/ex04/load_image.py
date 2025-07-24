@@ -51,7 +51,7 @@ def ft_load(path: str) -> np.array:
 
             img_array = np.array(img)
 
-            print(f"The shape of image is: {img_array.shape}")
+            # print(f"The shape of image is: {img_array.shape}")
 
             return img_array
 
