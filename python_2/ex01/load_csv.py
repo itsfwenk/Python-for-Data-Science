@@ -2,8 +2,7 @@ import pandas as pd
 import os
 
 
-
-def load(path: str) -> pd.DataFrame :
+def load(path: str) -> pd.DataFrame:
     """
     Takes a path as argument, writes the dimensions of the data set
     and returns it.
@@ -27,5 +26,18 @@ def load(path: str) -> pd.DataFrame :
         return df
 
     except FileNotFoundError as e:
-        print(str(e))
+        print(f"Error: {e}")
+        return None
+    except ValueError as e:
+        print(f"Error: {e}")
+        return None
+    except pd.errors.EmptyDataError:
+        print(f"Error: The CSV file '{path}' is empty.")
+        return None
+    except pd.errors.ParserError as e:
+        print(
+            f"Error: Could not parse '{path}': {e}")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred while loading '{path}': {e}")
         return None
